@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table ng-app="myModule" ng-controller="myController">
+    <tr>
+        <td>用户名</td>
+        <td><input type="text" ng-model="user.username"/> </td>
+    </tr>
+    <tr>
+        <td>密码</td>
+        <td><input type="password" ng-model="user.userpwd" /></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="button" value="登录" ng-click="login()" /> </td>
+    </tr>
+</table>
+<script src="node_modules/angular/angular.js"></script>
+<script>
+    var app=angular.module('myModule',[]);
+    app.controller('myController', ['$scope', function($scope){
+        $scope.user={
+            username:'',
+            userpwd:''
+        };
+
+        $scope.login=function  () {
+            alert($scope.user.username);
+        };
+        
+    }])
+</script>
+</body>
+</html>
